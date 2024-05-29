@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react'
 import disney from './../assets/Image/disney.png'
 import marvel from './../assets/Image/marvel.png'
@@ -44,6 +45,7 @@ function ProductionHouse() {
     <div className='flex gap-2 md:gap-5 p-2 px-5 md:px-16 '>
         {productionHouseList.map((item) =>(
             <div 
+                key={item.id}
                 className='
                     border-[2px] 
                     border-gray-600

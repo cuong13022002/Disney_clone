@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from "react"
 import HeaderItem from './HeaderItem'
 
@@ -62,13 +63,13 @@ function Header() {
 
             <div className="hidden md:flex gap-8">
                 {menu.map((item) => (
-                    <HeaderItem  name={item.name} Icon={item.icon} />
+                    <HeaderItem  name={item.name} Icon={item.icon} key={item.id}/>
                 ))}
             </div>
 
             <div className="flex md:hidden gap-5">
                 {menu.map((item,index) =>index < 3 && (
-                    <HeaderItem  name={''} Icon={item.icon} />
+                    <HeaderItem  name={''} Icon={item.icon} key={item.id}/>
                 ))}
             </div>
             <div className="md:hidden" onClick={handleToggle}>
@@ -87,7 +88,7 @@ function Header() {
                             py-4
                     ">
                         {menu.map((item,index) =>index > 2 && (
-                            <HeaderItem  name={item.name} Icon={item.icon} />
+                            <HeaderItem  name={item.name} Icon={item.icon} key={item.id}/>
                         ))}
                     </div>:null
                 }

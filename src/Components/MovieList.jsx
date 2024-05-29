@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useRef, useState } from 'react'
 import GlobalApi from '../Services/GlobalApi'
 import MovieCard from './MovieCard'
@@ -28,8 +30,8 @@ function MovieList({genreId}) {
        <div className='relative'>
             <HiChevronLeft onClick={()=>sliderLeft(elementRef.current)} className='hidden md:block text-white text-[50px] absolute z-10 mx-8 mt-[150px] cursor-pointer' />
             <div className='flex overflow-x-auto gap-8 scrollbar-none scroll-smooth 'ref={elementRef}>
-                {movieList.map((item,index) =>  (
-                    <MovieCard movie={item}/>
+                {movieList.map((item) =>  (
+                    <MovieCard movie={item} key={item.id}/>
                 ))}
             </div>
             <HiChevronRight onClick={()=>sliderRight(elementRef.current)}  className='hidden md:block text-white text-[50px] absolute mx-8 Z-10 top-0 mt-[150px] cursor-pointer right-0' />

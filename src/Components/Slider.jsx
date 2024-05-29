@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useRef, useState } from 'react'
 import GlobalApi from '../Services/GlobalApi'
 import { HiChevronLeft, HiChevronRight } from 'react-icons/hi'
@@ -39,6 +40,7 @@ function Slider() {
             ref={elementRef}>
             {movieList.map(item =>(
                     <img 
+                        key={item.id}
                         src={IMAGE_BASE_URL + item.backdrop_path} 
                         className='
                             min-w-full 
